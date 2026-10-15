@@ -1,0 +1,63 @@
+{
+  "name": "@bydtech/next-check-links",
+  "version": "0.1.0",
+  "description": "Fail the build when a Next.js app links to one of its own routes that does not exist, read from the source, not the built pages.",
+  "keywords": [
+    "nextjs",
+    "next",
+    "links",
+    "broken-links",
+    "routes",
+    "app-router",
+    "pages-router",
+    "lint",
+    "ci",
+    "cli"
+  ],
+  "homepage": "https://github.com/BYDTechSolutions/next-check-links#readme",
+  "bugs": {
+    "url": "https://github.com/BYDTechSolutions/next-check-links/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYDTechSolutions/next-check-links.git"
+  },
+  "license": "MIT",
+  "author": "BYD Tech <sales.bydtech@gmail.com> (https://bydtech.in)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "next-check-links": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "typescript": "^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsup": "^8.5.1",
+    "vitest": "^4.1.12"
+  }
+}
