@@ -77,7 +77,14 @@ function nameOf(node: ts.PropertyName | ts.JsxAttributeName): string | undefined
  * Turns the parts of a candidate into a link, or null when it is not an
  * internal path: it must start with a single `/`, as written in the source.
  */
-export function toPath(parts: readonly Part[]): { raw: string; path: string; segments: PathSegment[] } | null {
+export function toPath(input: readonly Part[]): { raw: string; path: string; segments: PathSegment[] } | null {
+  // Join neighboring literals, so `${BASE}/x` with BASE = '/docs' reads as '/docs/x'.
+  const parts: Part[] = [];
+  for (const p of input) {
+    const last = parts[parts.length - 1];
+    if (typeof p === 'string' && typeof last === 'string') parts[parts.length - 1] = last + p;
+    else if (p !== '') parts.push(p);
+  }
   const first = parts[0];
   if (typeof first !== 'string' || !first.startsWith('/') || first.startsWith('//')) return null;
   // Literal text with whitespace is a sentence or a pattern, not a path.
