@@ -1,0 +1,5 @@
+{
+  "allow": ["/api/auth/**"],
+  "routeFiles": ["src/lib/routes.ts"],
+  "exclude": ["src/legacy/**"]
+}

@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { EXIT, main } from '../src/commands.js';
 import { VERSION } from '../src/index.js';
@@ -157,5 +158,15 @@ describe('config file', () => {
       expect(await main([], io)).toBe(EXIT.USAGE);
       expect(io.err()).toMatch(message);
     }
+  });
+});
+
+describe('examples/demo', () => {
+  it('prints the report shown in the README', async () => {
+    const io = captureIo(fileURLToPath(new URL('../examples/demo', import.meta.url)));
+    expect(await main([], io)).toBe(EXIT.BROKEN);
+    const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+    const shown = /```\n(next-check-links: 2 broken[^]*?)```/.exec(readme)?.[1];
+    expect(io.err()).toBe(shown);
   });
 });

@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "check:links": "next-check-links",
+    "check:links:ci": "next-check-links --format github",
+    "build": "next-check-links && next build"
+  }
+}
