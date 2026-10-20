@@ -1,6 +1,6 @@
 {
   "name": "@bydtech/next-check-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fail the build when a Next.js app links to one of its own routes that does not exist, read from the source, not the built pages.",
   "keywords": [
     "nextjs",

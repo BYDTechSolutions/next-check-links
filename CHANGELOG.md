@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-21
+
+### Changed
+
+- Published from GitHub Actions through npm trusted publishing, with a
+  provenance attestation linking the package to this repository. No code changes.
+
 ## [0.1.0] - 2026-10-16
 
 ### Added
@@ -18,5 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `--allow`, `--include`, `--exclude`, `--route-file`, `--base-path`, `--page-extensions`, `--no-next-config`, and `next-check-links.config.{json,mjs}`.
 - API: `checkLinks`, `loadConfig`, `formatReport`, `appRoutes`, `pagesRoutes`, `publicRoutes`, `readNextConfig`, `collectLinks`, `matchRoute`, `closestRoute`, `parseSourcePattern`.
 
-[Unreleased]: https://github.com/BYDTechSolutions/next-check-links/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/BYDTechSolutions/next-check-links/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BYDTechSolutions/next-check-links/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/BYDTechSolutions/next-check-links/releases/tag/v0.1.1
+[0.1.0]: https://github.com/BYDTechSolutions/next-check-links/tree/c02b919882397876839be92c855ccea8244cca09
